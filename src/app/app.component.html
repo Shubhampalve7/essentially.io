@@ -1,0 +1,37 @@
+
+<div class="container" style="background-color: rgb(87, 87, 104);">
+    <h1 style="color: white;">Stock List</h1>
+  <div class="row">
+    <div class="col-8" style="padding-bottom: 20px;">
+      <input type="text" class="form-control" [(ngModel)]="userInput" placeholder="Enter your text">
+    </div>
+    <div class="col-4">
+      <button type="button" class="btn btn-primary float-right "  (click)="getDaataAsUserInserted()">Refresh Data</button>
+    </div>
+  </div>
+  <table class="table table-striped" style="background-color: aqua;">
+    <thead>
+      <tr>
+        <th>Exchange Symbol</th>
+        <th>Today's High Price</th>
+        <th>Todays's Low price</th>
+        <th>Today's volume</th>
+        <th>Today's open</th>
+        <th>Today's close</th>
+        <!-- Add more table headers based on your API data -->
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor="let stock of stockList" >
+        <td>{{ stock?.T }}</td>
+        <td>{{ stock?.h }}</td>
+        <td>{{ stock?.l }}</td>
+        <td>{{ stock?.v }}</td>
+        <td>{{ stock?.o }}</td>
+        <td>{{ stock?.c }}</td>
+        
+        <!-- Add more table columns based on your API data -->
+      </tr>
+    </tbody>
+  </table>
+</div>
